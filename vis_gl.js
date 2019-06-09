@@ -12,12 +12,12 @@ class Vis{
 		this.n_fpv = n_fpv;
 
 		this.color_maps = [
-			new ColorMap('#3870C9 0%, #4286F4 3%, #FFF9AD 5%, #59D84E 13%, #3BB230 40%, #F4F5Fc 65%, #FFFFFF 100%'),
-			new ColorMap('#111111 0%, #222222 3%, #a00000 10%, #ff0000 50%, #e06c00 70%, #ffff00 100%'),
-			new ColorMap('#9989dd 0%, #ab99ff 3%, #c0b2ff 5%, #eaeaff 10%, #FFFFFF 100%'),
+			new ColorMap('#3870C9 0%, #4286F4 0.1%, #FFF9AD 5%, #59D84E 13%, #3BB230 40%, #F4F5Fc 65%, #FFFFFF 100%'),
+			new ColorMap('#111111 0%, #222222 0.1%, #a00000 10%, #ff0000 50%, #e06c00 70%, #ffff00 100%'),
+			new ColorMap('#9989dd 0%, #ab99ff 0.1%, #c0b2ff 5%, #eaeaff 10%, #FFFFFF 100%'),
 			new ColorMap('#3a3a3a 0%, #9a9ba5 100%'),
 			new ColorMap('#d6d482 0%, #fff9ad 15%, #ffffff 100%'),
-			new ColorMap('#8788c1 0%, #56567c 1%, #444444 2%, #6b6c9b 50%, #ffffff 100%')
+			new ColorMap('#8788c1 0%, #56567c 0.1%, #444444 2%, #6b6c9b 50%, #ffffff 100%')
 
 		];
 		let t = (1.0 + Math.sqrt(5.0)) / 2.0;
@@ -220,19 +220,6 @@ class Vis{
 			this.nrm_buffer[i + 1] = normals[look][1];
 			this.nrm_buffer[i + 2] = normals[look][2];
 		}
-
-		// for(let i = 0; i < this.pos_buffer.length; i += 3*this.p_fpv){
-		// 	let a = this.pos_buffer.slice(i + 0, i + 3);
-		// 	let b = this.pos_buffer.slice(i + 3, i + 6);
-		// 	let c = this.pos_buffer.slice(i + 6, i + 9);
-		//
-		// 	let n = norm(cross(sub(a, b), sub(c, b)));
-		// 	for(let j = 0; j < 3; j++, nrm_ind += 3){
-		// 		this.nrm_buffer[nrm_ind + 0] = n[0];
-		// 		this.nrm_buffer[nrm_ind + 1] = n[1];
-		// 		this.nrm_buffer[nrm_ind + 2] = n[2];
-		// 	}
-		// }
 
 
 		gl.bindBuffer(gl.ARRAY_BUFFER, this.gl_pos_buf);
